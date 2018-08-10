@@ -29,41 +29,28 @@ window.onload = function(){
 	Stage1();
 
 	//Eventos
-	window.addEventListener('keydown',function(e){
-		var key = e.keyCode;
-		switch(key){
-			case 37:
-				player.mvLeft = true;
-				break;
-			case 39:
-				player.mvRight = true;
-				break;
-			case 38:
-				player.mvUp = true;
-				break;
-			case 40:
-				player.mvDown = true;
-				break;
-		}
-	},false);
-	
-	window.addEventListener('keyup',function(e){
-		var key = e.keyCode;
-		switch(key){
-			case 37:
-				player.mvLeft = false;
-				break;
-			case 39:
-				player.mvRight = false;
-				break;
-			case 38:
-				player.mvUp = false;
-				break;
-			case 40:
-				player.mvDown = false;
-				break;
-		}
-	},false);
+	function moviment(event, boolean){
+		window.addEventListener(event, function(event){
+			const key = e.keyCode;
+			switch(key){
+				case 37:
+					player.mvLeft = boolean;
+					break;
+				case 39:
+					player.mvRight = boolean;
+					break;
+				case 38:
+					player.mvUp = boolean;
+					break;
+				case 40:
+					player.mvDown = boolean;
+					break;
+			}	
+		});
+	}
+
+	moviment('keydown', true);
+	moviment('keyup', false);
 
 	function update(){
 		player.Move();

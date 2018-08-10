@@ -56,17 +56,21 @@ window.onload = function(){
 		player.Move();
 		
 		//limite do player
-		if(player.posX < 0){
-			player.posX = 0;
+		setPlayerLimitToZero('posX');
+		setPlayerLimitInScreen('posX', 'width');
+		setPlayerLimitToZero('posY');
+		setPlayerLimitInScreen('posY', 'height');
+	}
+
+	function setPlayerLimitToZero(position) {
+		if(player[position] < 0) {
+			player[position] = 0;
 		}
-		if(player.posX + player.width > cnv.width){
-			player.posX = cnv.width - player.width;
-		}
-		if(player.posY < 0){
-			player.posY = 0;
-		}
-		if(player.posY + player.height > cnv.height){
-			player.posY = cnv.height - player.height;
+	}
+
+	function setPlayerLimitInScreen(position, dimension) {
+		if(player[position] + player[dimension] > cnv[dimension]) {
+			player[position] = cnv[dimension] - player[dimension];
 		}
 	}
 

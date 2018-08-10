@@ -30,7 +30,7 @@ window.onload = function(){
 
 	//Eventos
 	function moviment(event, boolean){
-		window.addEventListener(event, function(event){
+		window.addEventListener(event, function(e){
 			const key = e.keyCode;
 			switch(key){
 				case 37:

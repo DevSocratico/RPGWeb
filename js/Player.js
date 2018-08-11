@@ -48,10 +48,12 @@ function Player(img){
 			this.srcY = this.h * 1; 
 		}
 		if(this.mvUp && !this.mvDown){
-			this.posY -= this.speed; 
+			this.posY -= this.speed;
+			this.srcY = this.h * 3; 
 		}
 		if(this.mvDown && !this.mvUp){
 			this.posY += this.speed; 
+			this.srcY = this.h * 0;
 		}
 	}
 	

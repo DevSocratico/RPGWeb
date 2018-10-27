@@ -15,7 +15,7 @@ window.onload = function() {
 	//Funções
 	var CleanScreen = function() {
 		ctx.save();
-		ctx.fillStyle = '#783c00';
+		ctx.fillStyle = '#873c00';
 		ctx.fillRect(0, 0, cnv.width, cnv.height);
 		ctx.fill();
 		ctx.restore();
